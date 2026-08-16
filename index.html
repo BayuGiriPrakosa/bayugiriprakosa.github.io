@@ -8,14 +8,14 @@
   @import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,500;6..72,600&family=Manrope:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
 
   :root{
-    --paper: #0B1424;
-    --paper-dim: #0F1B30;
-    --ink: #E9E6DA;
-    --ink-soft: #93A0B8;
-    --teal: #3E6E63;
-    --teal-deep: #7FB8AA;
-    --gold: #D2AC47;
-    --rule: rgba(233,230,218,0.14);
+    --paper: #FAF7F0;
+    --paper-dim: #F1EADA;
+    --ink: #1B2430;
+    --ink-soft: #5B6572;
+    --teal: #2F6E62;
+    --teal-deep: #1F4F46;
+    --gold: #8A6A22;
+    --rule: rgba(27,36,48,0.16);
   }
 
   *{box-sizing:border-box;}
@@ -62,17 +62,9 @@
     font-weight:500;
     font-size:clamp(42px, 7vw, 76px);
     line-height:1.02;
-    margin:0 0 18px;
+    margin:0 0 28px;
     letter-spacing:-0.01em;
     color:var(--ink);
-  }
-  .tagline{
-    font-style:italic;
-    font-family:'Newsreader', serif;
-    font-weight:300;
-    font-size:22px;
-    color:var(--ink-soft);
-    margin:0 0 34px;
   }
   .hero-meta{
     display:flex;
@@ -99,6 +91,7 @@
     width:100%;
     height:100%;
     object-fit:cover;
+    object-position:center 12%;
     display:block;
     filter:grayscale(8%);
   }
@@ -230,7 +223,10 @@
 
   /* ---------- PUBLICATIONS ---------- */
   .pub{
-    padding:16px 0;
+    display:grid;
+    grid-template-columns:28px 1fr;
+    gap:0 14px;
+    padding:18px 0;
     border-bottom:1px dashed var(--rule);
     font-size:15.5px;
     line-height:1.55;
@@ -238,9 +234,62 @@
   .pub:last-child{border-bottom:none;}
   .pub .no{
     font-family:'Space Mono', monospace;
+    font-size:13px;
     color:var(--gold);
-    margin-right:10px;
+    padding-top:3px;
   }
+  .pub-body{min-width:0;}
+  .pub-title{
+    display:block;
+    font-family:'Newsreader', serif;
+    font-size:17px;
+    font-weight:500;
+    line-height:1.4;
+    color:var(--ink);
+  }
+  .pub-title a{
+    color:var(--ink);
+    text-decoration:none;
+    border-bottom:1px solid var(--teal-deep);
+  }
+  .pub-title a:hover{color:var(--teal-deep);}
+  .pub-byline{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:8px;
+    font-family:'Space Mono', monospace;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    margin:5px 0 0;
+  }
+  .pub-tag{
+    display:inline-block;
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--gold);
+    border:1px solid var(--rule);
+    border-radius:2px;
+    padding:2px 8px;
+  }
+  .pub-desc{
+    font-size:14px;
+    line-height:1.55;
+    color:var(--ink-soft);
+    margin:8px 0 0;
+    max-width:60ch;
+  }
+  .pub-group-label{
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin:26px 0 4px;
+  }
+  .pub-group-label:first-child{margin-top:0;}
 
   /* ---------- FOOTER / CONTACT ---------- */
   footer{
@@ -290,6 +339,7 @@
     header.hero{padding:64px 0 40px;}
     .ledger-entry, .edu-entry{grid-template-columns:1fr;}
     .entry-dates, .edu-year{text-align:left;}
+    .pub{grid-template-columns:20px 1fr;}
   }
 
   :focus-visible{
@@ -306,7 +356,6 @@
     <div class="hero-text">
       <div class="eyebrow">Corporate Finance — Textual Analysis — Industry Policy</div>
       <h1 class="name">Bayu Giri<br>Prakosa</h1>
-      <p class="tagline">"never enough to evolve"</p>
       <div class="hero-meta">
         <span>Daejeon, South Korea</span>
         <a href="mailto:bayu_giria@yahoo.com">bayu_giria@yahoo.com</a>
@@ -396,8 +445,57 @@
 
   <section class="reveal">
     <div class="section-head"><span class="no">04</span><h2>Publications</h2></div>
-    <div class="pub"><span class="no">i.</span>The Implementation of Governance Principles in the Ministry of Industry of the Republic of Indonesia and the Effect on Performance</div>
-    <div class="pub"><span class="no">ii.</span>Correlation Among Components of the Indonesian Industry Readiness Index 4.0 and Its Implementation on Socioeconomic Along With the Demographic Aspects</div>
+
+    <div class="pub-group-label">Publications</div>
+    <div class="pub">
+      <span class="no">1.</span>
+      <div class="pub-body"><span class="pub-title">The Implementation of Governance Principles in the Ministry of Industry of the Republic of Indonesia and the Effect on Performance</span>
+      <p class="pub-desc">Examines how governance principles adopted within the Ministry of Industry relate to institutional performance outcomes.</p></div>
+    </div>
+    <div class="pub">
+      <span class="no">2.</span>
+      <div class="pub-body"><span class="pub-title"><a href="https://doi.org/10.1108/DTS-08-2023-0063" target="_blank" rel="noopener">Correlation Among Components of the Indonesian Industry Readiness Index 4.0 and Its Implementation on Socioeconomic Along With the Demographic Aspects</a></span>
+      <p class="pub-byline">Digital Transformation and Society (2024)</p>
+      <p class="pub-desc">Analyzes Indonesia's INDI 4.0 readiness assessment across 622 firms and its socioeconomic and demographic effects.</p></div>
+    </div>
+
+    <div class="pub-group-label">Working Papers</div>
+    <div class="pub">
+      <span class="no">3.</span>
+      <div class="pub-body"><span class="pub-title"><a href="https://ssrn.com/abstract=7003866" target="_blank" rel="noopener">Corporate Risk Factor Disclosures and the Cost of Debt Financing</a></span>
+      <p class="pub-byline">Prakosa, B.G. &amp; Kim, R. <span class="pub-tag">Under review</span></p>
+      <p class="pub-desc">Shows that longer Item 1A risk factor disclosures are associated with significantly higher borrowing costs across bank loans and corporate bonds.</p></div>
+    </div>
+    <div class="pub">
+      <span class="no">4.</span>
+      <div class="pub-body"><span class="pub-title"><a href="https://ssrn.com/abstract=6764472" target="_blank" rel="noopener">Health Shocks and the Cost of Equity Capital: Evidence from the Opioid Epidemic</a></span>
+      <p class="pub-byline">Prakosa, B.G. &amp; Kim, R. <span class="pub-tag">R&amp;R, SSCI journal</span></p>
+      <p class="pub-desc">Firms headquartered in counties with higher opioid mortality face significantly higher implied cost of equity capital, especially in manufacturing.</p></div>
+    </div>
+    <div class="pub">
+      <span class="no">5.</span>
+      <div class="pub-body"><span class="pub-title">Narrative Resilience: Abnormal Disclosure Tone After Cyberattacks</span>
+      <p class="pub-byline">Forthcoming, Int'l J. of Accounting &amp; Information Management</p>
+      <p class="pub-desc">Documents that firms adopt abnormally optimistic disclosure tone after data breaches, particularly when losses and visibility are high.</p></div>
+    </div>
+    <div class="pub">
+      <span class="no">6.</span>
+      <div class="pub-body"><span class="pub-title">Are Lengthy Risk Factor Disclosures Priced?</span>
+      <p class="pub-byline">Prakosa, B.G. &amp; Kim, R. <span class="pub-tag">Under review</span></p>
+      <p class="pub-desc">Finds that longer Item 1A risk narratives are associated with a higher implied cost of equity capital, distinct from readability effects.</p></div>
+    </div>
+    <div class="pub">
+      <span class="no">7.</span>
+      <div class="pub-body"><span class="pub-title">Changes in Risk Factor Disclosures and Uncertainty</span>
+      <p class="pub-byline">Prakosa, B.G. &amp; Kim, R. <span class="pub-tag">Working paper</span></p>
+      <p class="pub-desc">Introduces a transformer-based measure of Item 1A change and links larger changes to higher implied and cash-flow volatility.</p></div>
+    </div>
+    <div class="pub">
+      <span class="no">8.</span>
+      <div class="pub-body"><span class="pub-title">Managerial Avoidance in Earnings Call Q&amp;A and Stock Price Crash Risk</span>
+      <p class="pub-byline"><span class="pub-tag">Early draft</span></p>
+      <p class="pub-desc">Proposes a real-time behavioral measure of evasive Q&amp;A responses and links it to future stock price crash risk, independent of disclosure tone.</p></div>
+    </div>
   </section>
 
   <section class="reveal">
